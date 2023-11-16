@@ -17,6 +17,7 @@ const ProgressBar = ({ value, size }) => {
       <BarWrapper>
         <Bar value={value} size={size} />
       </BarWrapper>
+      <VisuallyHidden>{value}%</VisuallyHidden>
     </Wrapper>
   )
 }
@@ -39,6 +40,7 @@ const Wrapper = styled.div`
   border-radius: ${({ size }) => (size === 'large' ? '8px' : '4px')};
   overflow: hidden;
   padding: ${({ size }) => (size === 'large' ? '4px' : '0px')};
+  box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
 `
 const Bar = styled.div`
   background-color: ${COLORS.primary};
